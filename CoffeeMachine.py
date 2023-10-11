@@ -1,5 +1,3 @@
-import os
-
 f = open("resources.txt", "r")
 machine = {
     "water": int(f.readline()),
@@ -19,13 +17,21 @@ def pay():
 
 
 def make_espresso():
+
+    resource_check = True
     if machine["water"] < 50:
+        resource_check = False
         print("We're sorry! There is not enough water. Please come back later")
-    elif machine["milk"] < 50:
+
+    if machine["milk"] < 50:
+        resource_check = False
         print("We're sorry! There is not enough milk. Please come back later")
-    elif machine["coffee"] < 100:
+
+    if machine["coffee"] < 100:
+        resource_check = False
         print("We're sorry! There is not enough coffee. Please come back later")
-    else:
+
+    if resource_check:
         paid = pay()
         if paid >= 2:
             if paid > 2:
@@ -40,14 +46,21 @@ def make_espresso():
 
 
 def make_latte():
-    os.system('cls' if os.name == 'nt' else 'clear')
+
+    resource_check = True
     if machine["water"] < 50:
+        resource_check = False
         print("We're sorry! There is not enough water. Please come back later")
-    elif machine["milk"] < 75:
+
+    if machine["milk"] < 75:
+        resource_check = False
         print("We're sorry! There is not enough milk. Please come back later")
-    elif machine["coffee"] < 125:
+
+    if machine["coffee"] < 125:
+        resource_check = False
         print("We're sorry! There is not enough coffee. Please come back later")
-    else:
+
+    if resource_check:
         paid = pay()
         if paid >= 3.50:
             if paid > 3.50:
@@ -62,13 +75,21 @@ def make_latte():
 
 
 def make_cappuccino():
+
+    resource_check = True
     if machine["water"] < 50:
+        resource_check = False
         print("We're sorry! There is not enough water. Please come back later")
-    elif machine["milk"] < 100:
+
+    if machine["milk"] < 100:
+        resource_check = False
         print("We're sorry! There is not enough milk. Please come back later")
-    elif machine["coffee"] < 175:
+
+    if machine["coffee"] < 175:
+        resource_check = False
         print("We're sorry! There is not enough coffee. Please come back later")
-    else:
+
+    if resource_check:
         paid = pay()
         if paid >= 4.25:
             if paid > 4.25:
